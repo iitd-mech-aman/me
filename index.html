@@ -1,135 +1,645 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aman — Mechanical Engineering undergraduate at IIT Delhi, interested in mechanical systems, robotics, and computational engineering.">
-  <meta name="theme-color" content="#f7f7f4">
-  <title>Aman | Mechanical Engineering</title>
+  <meta name="description" content="Aman — Mechanical Engineering undergraduate at IIT Delhi. Projects in CAD, robotics, microcontrollers, and mechanical mechanisms.">
+  <meta name="theme-color" content="#f3f1eb">
+  <title>Aman — Mechanical Engineering | IIT Delhi</title>
+
   <style>
-    :root { --paper:#f7f7f4; --ink:#20211f; --muted:#686b65; --line:#dedfd8; --accent:#36594c; --accent-soft:#e8eee9; --white:#fff; --max:1040px; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-    a { color:inherit; }
-    .page { width:min(var(--max),calc(100% - 48px)); margin:0 auto; }
-    header { min-height:76px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); gap:24px; }
-    .wordmark { font-size:14px; font-weight:750; letter-spacing:.12em; text-decoration:none; text-transform:uppercase; }
-    nav { display:flex; gap:24px; }
-    nav a { color:var(--muted); font-size:13px; text-decoration:none; }
-    nav a:hover,.text-link:hover { color:var(--accent); }
-    .hero { display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:clamp(36px,8vw,100px); align-items:center; padding:clamp(68px,10vw,118px) 0 82px; }
-    .eyebrow { margin:0 0 18px; color:var(--accent); font-size:12px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
-    h1 { margin:0; font-size:clamp(48px,7.2vw,78px); line-height:.98; letter-spacing:-.065em; font-weight:750; }
-    .subtitle { margin:22px 0 0; max-width:560px; font-size:clamp(17px,2.2vw,21px); line-height:1.45; letter-spacing:-.02em; }
-    .intro { margin:18px 0 0; max-width:570px; color:var(--muted); font-size:15px; }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
-    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; gap:10px; padding:0 17px; border:1px solid var(--ink); border-radius:4px; background:var(--ink); color:var(--white); font-size:13px; font-weight:650; text-decoration:none; transition:transform .15s ease,background .15s ease; }
-    .button:hover { transform:translateY(-1px); background:var(--accent); }
-    .button.secondary { color:var(--ink); background:transparent; border-color:#bfc2b9; }
-    .button.secondary:hover { background:var(--accent-soft); }
-    .portrait-wrap { position:relative; }
-    .portrait { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 35%; border-radius:3px; background:#e5e6df; filter:saturate(.82); }
-    .portrait-note { margin:12px 0 0; color:var(--muted); font-size:11px; letter-spacing:.04em; }
-    .section { display:grid; grid-template-columns:180px minmax(0,1fr); gap:40px; padding:30px 0 34px; border-top:1px solid var(--line); }
-    .section-label { margin:4px 0 0; color:var(--muted); font-size:11px; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
-    .section-content { max-width:690px; }
-    .section-content p { margin:0 0 14px; font-size:15px; }
-    .interests { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
-    .tag { padding:6px 10px; border:1px solid var(--line); border-radius:3px; color:#454943; background:rgba(255,255,255,.48); font-size:12px; }
-    .document-list { display:grid; gap:10px; }
-    .document { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 17px; border:1px solid var(--line); border-radius:4px; background:rgba(255,255,255,.56); text-decoration:none; transition:border-color .15s ease,transform .15s ease; }
-    .document:hover { border-color:#aebbb1; transform:translateY(-1px); }
-    .document strong { display:block; font-size:14px; }
-    .document span { display:block; margin-top:3px; color:var(--muted); font-size:12px; }
-    .arrow { color:var(--accent); font-size:19px; }
-    .contact-line { color:var(--muted); font-size:14px; }
-    .contact-line a { text-decoration-thickness:1px; text-underline-offset:3px; }
-    footer { display:flex; justify-content:space-between; gap:20px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
-    @media (max-width:700px) {
-      .page { width:min(100% - 32px,var(--max)); }
-      header { min-height:66px; }
-      nav { gap:14px; }
-      nav a { font-size:12px; }
-      .hero { grid-template-columns:minmax(0,1fr) 112px; gap:20px; padding:60px 0 54px; }
-      h1 { font-size:clamp(42px,11vw,58px); }
-      .eyebrow { font-size:10px; margin-bottom:13px; }
-      .subtitle { font-size:16px; margin-top:17px; }
-      .intro { font-size:13px; }
-      .portrait { aspect-ratio:3/4; }
-      .portrait-note { font-size:10px; }
-      .actions { gap:8px; }
-      .button { min-height:42px; padding:0 12px; font-size:12px; }
-      .section { grid-template-columns:1fr; gap:12px; padding:24px 0 27px; }
-      .section-label { margin:0; }
-      .section-content p { font-size:14px; }
+    :root {
+      --paper: #f3f1eb;
+      --surface: #fbfaf6;
+      --ink: #18211e;
+      --muted: #626b65;
+      --line: #d7d9d0;
+      --accent: #315d4d;
+      --accent-soft: #dce7dc;
+      --dark: #182a24;
+      --max: 1120px;
     }
-    @media (max-width:420px) {
-      nav { gap:10px; } nav a { font-size:11px; }
-      .hero { grid-template-columns:minmax(0,1fr) 88px; gap:14px; }
-      .portrait-note { display:none; }
-      .actions { flex-direction:column; align-items:stretch; }
-      .button { width:100%; }
-      footer { flex-direction:column; gap:5px; }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 56px));
+      margin: auto;
+    }
+
+    .topline {
+      height: 5px;
+      background: var(--accent);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      gap: clamp(38px, 8vw, 100px);
+      align-items: center;
+      padding: 82px 0 74px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -.07em;
+      font-weight: 760;
+    }
+
+    .hero-lede {
+      max-width: 650px;
+      margin: 25px 0 0;
+      font-size: clamp(18px, 2.3vw, 23px);
+      line-height: 1.42;
+      letter-spacing: -.025em;
+    }
+
+    .hero-copy {
+      max-width: 630px;
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 27px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      min-height: 45px;
+      padding: 0 17px;
+      border: 1px solid var(--dark);
+      border-radius: 3px;
+      background: var(--dark);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--accent);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: #b9beb4;
+    }
+
+    .button.secondary:hover {
+      background: var(--accent-soft);
+    }
+
+    .portrait-frame {
+      position: relative;
+      padding: 0 0 14px 14px;
+    }
+
+    .portrait-frame::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 72%;
+      height: 74%;
+      border-left: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .portrait {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 35%;
+      background: #e2e3dc;
+      filter: saturate(.82);
+    }
+
+    .portrait-caption {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .quickfacts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 0 4px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact { padding: 20px 22px 20px 0; }
+
+    .fact + .fact {
+      padding-left: 22px;
+      border-left: 1px solid var(--line);
+    }
+
+    .fact-label {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .fact-value {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 45px;
+      padding: 36px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .section-body { max-width: 800px; }
+
+    .section-body > p {
+      margin: 0 0 14px;
+      font-size: 15px;
+    }
+
+    .section-body > p:last-child { margin-bottom: 0; }
+
+    .subheading {
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: -.035em;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project {
+      min-height: 185px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(251, 250, 246, .72);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .project-type {
+      color: var(--muted);
+      font-size: 10px;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.3;
+      letter-spacing: -.025em;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .interest-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .interest-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 20px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .interest-row:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .interest-row strong { font-size: 14px; }
+
+    .interest-row span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .doc-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+    }
+
+    .doc-link:hover { border-color: #9baea0; }
+
+    .doc-link strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .doc-link small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-size: 19px;
+    }
+
+    .contact-panel {
+      padding: 28px;
+      background: var(--dark);
+      color: #f7f6f0;
+    }
+
+    .contact-panel p {
+      max-width: 620px;
+      margin: 0 0 18px;
+      color: #d5ddd6;
+      font-size: 15px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .contact-links a {
+      color: white;
+      font-size: 13px;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 0 30px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(var(--max), calc(100% - 34px)); }
+      header { padding: 18px 0; }
+      nav { gap: 14px; }
+      nav a { font-size: 12px; }
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 130px;
+        gap: 22px;
+        padding: 56px 0 48px;
+      }
+      h1 { font-size: clamp(43px, 9vw, 62px); }
+      .hero-lede { font-size: 17px; }
+      .hero-copy { font-size: 13px; }
+      .portrait-frame { padding-left: 9px; padding-bottom: 9px; }
+      .portrait-caption { font-size: 9px; }
+      .section {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        padding: 27px 0 31px;
+      }
+      .section-heading { margin: 0; }
+      .interest-row {
+        grid-template-columns: 145px minmax(0, 1fr);
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .wrap { width: calc(100% - 30px); }
+      nav { gap: 11px; }
+      nav a { font-size: 11px; }
+      .wordmark { font-size: 12px; }
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 86px;
+        gap: 13px;
+        padding: 45px 0 36px;
+      }
+      h1 { font-size: clamp(39px, 10.8vw, 52px); }
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: .1em;
+        margin-bottom: 14px;
+      }
+      .hero-lede { font-size: 15px; margin-top: 17px; }
+      .hero-copy { font-size: 12px; }
+      .portrait-caption { display: none; }
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 20px;
+      }
+      .button { width: 100%; min-height: 41px; font-size: 12px; }
+      .quickfacts { grid-template-columns: 1fr; }
+      .fact, .fact + .fact {
+        padding: 12px 0;
+        border-left: 0;
+      }
+      .fact + .fact { border-top: 1px solid var(--line); }
+      .project-grid { grid-template-columns: 1fr; }
+      .project { min-height: 0; }
+      .project-top { margin-bottom: 15px; }
+      .interest-row { grid-template-columns: 1fr; gap: 3px; }
+      .contact-panel { padding: 22px 18px; }
+      footer { flex-direction: column; gap: 5px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
+  <div class="topline"></div>
+  <div class="wrap">
+
     <header>
-      <a class="wordmark" href="#top" aria-label="Aman home">AMAN</a>
+      <a class="wordmark" href="#top" aria-label="Aman home">AMAN / ME</a>
       <nav aria-label="Main navigation">
-        <a href="#about">About</a><a href="#documents">Documents</a><a href="#contact">Contact</a>
+        <a href="#background">Background</a>
+        <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
+
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <p class="eyebrow">Mechanical Engineering · IIT Delhi</p>
-          <h1 id="hero-title">Hello,<br>I'm Aman.</h1>
-          <p class="subtitle">Undergraduate exploring how engineering systems work—and how to make them work better.</p>
-          <p class="intro">I'm a Mechanical Engineering student at the Indian Institute of Technology Delhi, building foundations in mechanical design, robotics, and computational tools through coursework and hands-on projects.</p>
+          <h1 id="hero-title">Hello, I'm Aman.</h1>
+          <p class="hero-lede">An undergraduate learning mechanical engineering by studying systems, designing mechanisms, and building things.</p>
+          <p class="hero-copy">My experience so far is a mix of CAD modelling, introductory robotics, microcontroller-based builds, and hands-on mechanical work. This page brings together what I've worked on and the areas I'm curious to explore next.</p>
           <div class="actions">
             <a class="button" href="cv.pdf" target="_blank" rel="noopener">View CV <span aria-hidden="true">↗</span></a>
-            <a class="button secondary" href="letter-of-purpose.pdf" target="_blank" rel="noopener">Letter of Purpose <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <div class="portrait-wrap">
+
+        <div class="portrait-frame">
           <img class="portrait" src="photo.png" alt="Portrait of Aman">
-          <p class="portrait-note">MECHANICAL ENGINEERING · IIT DELHI</p>
+          <p class="portrait-caption">Mechanical Engineering · IIT Delhi</p>
         </div>
       </section>
-      <section class="section" id="about">
-        <h2 class="section-label">A little about me</h2>
-        <div class="section-content">
-          <p>I'm interested in understanding physical systems from both a mechanical and computational perspective. My project experience so far includes CAD modelling, robotics, microcontroller-based builds, and a motorized lift mechanism.</p>
-          <p>I'm currently developing my technical foundation and looking for opportunities to learn through research, contribute carefully to a team, and grow as an engineer.</p>
-          <div class="interests" aria-label="Areas of interest">
-            <span class="tag">Mechanical Design</span><span class="tag">Robotics</span><span class="tag">Thermal &amp; Fluid Sciences</span><span class="tag">Computational Engineering</span>
+
+      <div class="quickfacts" aria-label="Background at a glance">
+        <div class="fact">
+          <span class="fact-label">Currently</span>
+          <span class="fact-value">B.Tech. Mechanical Engineering</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Institution</span>
+          <span class="fact-value">IIT Delhi</span>
+        </div>
+        <div class="fact">
+          <span class="fact-label">Experience so far</span>
+          <span class="fact-value">Projects &amp; hands-on builds</span>
+        </div>
+      </div>
+
+      <section class="section" id="background">
+        <h2 class="section-heading">Background</h2>
+        <div class="section-body">
+          <h3 class="subheading">What I've worked on</h3>
+          <p>I'm pursuing a B.Tech. in Mechanical Engineering at the Indian Institute of Technology Delhi. My coursework has introduced me to subjects including engineering mechanics, solid mechanics, thermodynamics, fluid mechanics, kinematics and dynamics of machines, and introductory programming.</p>
+          <p>Outside coursework, I've worked on CAD models and practical builds, including a coaxial swerve-drive mechanism, a line-follower robot, Arduino- and ESP32-based projects, and an automated winch lift mechanism. These projects have given me initial exposure to mechanical design, basic electronics, coding, and making systems work in practice.</p>
+          <p>I'm still early in my engineering journey. My projects have been opportunities to explore and try things out rather than substantial research work. I'm continuing to build my foundations and learn what it takes to investigate engineering problems more deeply.</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-heading">Selected projects</h2>
+        <div class="section-body">
+          <p style="margin-bottom:18px;color:var(--muted)">A few examples of practical work I've explored so far.</p>
+
+          <div class="project-grid">
+            <article class="project">
+              <div class="project-top">
+                <span class="project-number">01 / CAD</span>
+                <span class="project-type">Mechanical design</span>
+              </div>
+              <h3>Coaxial Swerve Drive</h3>
+              <p>CAD modelling in Autodesk Inventor, component layout, and mechanical packaging for a coaxial swerve-drive arrangement.</p>
+            </article>
+
+            <article class="project">
+              <div class="project-top">
+                <span class="project-number">02 / ROBOTICS</span>
+                <span class="project-type">Hardware + code</span>
+              </div>
+              <h3>Line Follower Robot</h3>
+              <p>A line-following robot project involving CAD, hardware and coding; the team placed second at Tryst, IIT Delhi.</p>
+            </article>
+
+            <article class="project">
+              <div class="project-top">
+                <span class="project-number">03 / EMBEDDED</span>
+                <span class="project-type">Microcontrollers</span>
+              </div>
+              <h3>Arduino Distance Measurement</h3>
+              <p>An individual build using an Arduino and an ultrasonic sensor to measure distance.</p>
+            </article>
+
+            <article class="project">
+              <div class="project-top">
+                <span class="project-number">04 / MECHANISM</span>
+                <span class="project-type">Manufacturing</span>
+              </div>
+              <h3>Automated Winch Lift</h3>
+              <p>A semester-long mechanism project involving a worm-gear drive and introductory hands-on exposure to machining processes.</p>
+            </article>
           </div>
         </div>
       </section>
+
+      <section class="section" id="interests">
+        <h2 class="section-heading">Research interests</h2>
+        <div class="section-body">
+          <p>These are areas I'm curious about and would like to understand better; listing them here doesn't imply prior research experience or expertise.</p>
+
+          <div class="interest-list">
+            <div class="interest-row">
+              <strong>Mechanical design</strong>
+              <span>Mechanisms, product design, and how engineering systems are put together.</span>
+            </div>
+            <div class="interest-row">
+              <strong>Robotics &amp; mechatronics</strong>
+              <span>Interactions between mechanical systems, electronics, sensing, and control.</span>
+            </div>
+            <div class="interest-row">
+              <strong>Thermal &amp; fluid sciences</strong>
+              <span>Heat transfer, fluid mechanics, and computational fluid dynamics.</span>
+            </div>
+            <div class="interest-row">
+              <strong>Computational engineering</strong>
+              <span>Using simulation, numerical methods, and programming to investigate engineering problems.</span>
+            </div>
+            <div class="interest-row">
+              <strong>AI/ML for engineering</strong>
+              <span>Exploring how data-driven methods may support modelling, analysis, and design.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="documents">
-        <h2 class="section-label">Documents</h2>
-        <div class="section-content document-list">
-          <a class="document" href="cv.pdf" target="_blank" rel="noopener">
-            <span><strong>Curriculum Vitae</strong><span>Academic background, projects, skills, and activities · PDF</span></span><span class="arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="document" href="letter-of-purpose.pdf" target="_blank" rel="noopener">
-            <span><strong>Letter of Purpose</strong><span>Research interests and motivation · PDF</span></span><span class="arrow" aria-hidden="true">↗</span>
+        <h2 class="section-heading">CV</h2>
+        <div class="section-body">
+          <a class="doc-link" href="cv.pdf" target="_blank" rel="noopener">
+            <span>
+              <strong>Curriculum Vitae</strong>
+              <small>Education, projects, skills, and activities · PDF</small>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
+
       <section class="section" id="contact">
-        <h2 class="section-label">Contact</h2>
-        <div class="section-content">
-          <p class="contact-line">I'm always open to research opportunities, new ideas, and conversations that help me learn and grow as an engineer.</p>
-          <p class="contact-line"><a href="mailto:aman.cc.iitd@gmail.com">aman.cc.iitd@gmail.com</a></p>
-          <p class="contact-line"><a href="https://www.linkedin.com/in/voritok" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/iitd-mech-aman" target="_blank" rel="noopener">GitHub</a></p>
+        <h2 class="section-heading">Contact</h2>
+        <div class="section-body">
+          <div class="contact-panel">
+            <p>I'm always open to research opportunities, new ideas, and conversations that help me learn and grow as an engineer.</p>
+            <div class="contact-links">
+              <a href="mailto:aman.cc.iitd@gmail.com">Email me ↗</a>
+              <a href="https://www.linkedin.com/in/voritok" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/iitd-mech-aman" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <footer><span>© 2026 Aman</span><span>Built with care · Hosted on GitHub Pages</span></footer>
+
+    <footer>
+      <span>© 2026 Aman</span>
+      <span>Personal portfolio · Hosted on GitHub Pages</span>
+    </footer>
+
   </div>
 </body>
 </html>
